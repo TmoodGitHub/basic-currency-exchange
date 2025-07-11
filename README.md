@@ -10,11 +10,6 @@ A simple single-page currency converter with history, built using React, Vite, N
 - Paginated history stored in PostgreSQL
 - Full-stack app built in ~50 minutes
 
-## 📽️ Demo
-
-![Demo GIF](./demo.gif)
-
-▶️ [Watch Build Video](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
 ## 🛠️ Tech Stack
 
