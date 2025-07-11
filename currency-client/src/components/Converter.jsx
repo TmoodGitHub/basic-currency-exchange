@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from '../api/client';
+import './Converter.css';
 
 const Converter = ({ onConvert }) => {
   const [currencies, setCurrencies] = useState([]);
@@ -19,33 +20,54 @@ const Converter = ({ onConvert }) => {
   };
 
   return (
-    <div>
-      <h1>Currency Converter</h1>
-      <select value={from} onChange={(e) => setFrom(e.target.value)}>
-        {currencies.map((c) => (
-          <option key={c} value={c}>
-            {c}
-          </option>
-        ))}
-      </select>
+    <div className='converter-container'>
+      <h1 className='converter-title'>Currency Converter</h1>
 
-      <input
-        type='number'
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
+      <div className='converter-inputs'>
+        <div className='input-group'>
+          <label htmlFor='from'>From</label>
+          <select
+            id='from'
+            value={from}
+            onChange={(e) => setFrom(e.target.value)}
+          >
+            {currencies.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <select value={to} onChange={(e) => setTo(e.target.value)}>
-        {currencies.map((c) => (
-          <option key={c} value={c}>
-            {c}
-          </option>
-        ))}
-      </select>
+        <div className='input-group'>
+          <label htmlFor='amount'>Amount</label>
+          <input
+            id='amount'
+            type='number'
+            min='0'
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
+        </div>
 
-      <button onClick={handleConvert}>Convert</button>
+        <div className='input-group'>
+          <label htmlFor='to'>To</label>
+          <select id='to' value={to} onChange={(e) => setTo(e.target.value)}>
+            {currencies.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <button className='convert-button' onClick={handleConvert}>
+        Convert
+      </button>
+
       {result && (
-        <h2>
+        <h2 className='converter-result'>
           {amount} {from} = <strong>{result}</strong> {to}
         </h2>
       )}
