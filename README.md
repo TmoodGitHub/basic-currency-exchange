@@ -2,6 +2,10 @@
 
 A simple single-page currency converter with history, built using React, Vite, Node, Express, Sequelize, and PostgreSQL.
 
+## 🌐 Live Demo
+
+Try it here: [basic-currency-exchange-1.onrender.com](https://basic-currency-exchange-1.onrender.com/)
+
 ## 🚀 Features
 
 - Real-time currency conversion (powered by [ExchangeRate-API](https://open.er-api.com))
@@ -10,13 +14,12 @@ A simple single-page currency converter with history, built using React, Vite, N
 - Paginated history stored in PostgreSQL
 - Full-stack app built in ~50 minutes
 
-
 ## 🛠️ Tech Stack
 
-| Frontend | Backend | Database |
-|----------|---------|----------|
+| Frontend | Backend         | Database   |
+|----------|------------------|------------|
 | React (Vite) | Node.js + Express | PostgreSQL |
-| Axios | Sequelize ORM | pg |
+| Axios        | Sequelize ORM     | pg         |
 
 ## 🧪 Running Locally
 
