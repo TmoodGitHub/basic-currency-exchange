@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../api/client';
+import { getSymbol } from '../utils/currencySymbols';
 import './History.css';
 
 const History = ({ refresh }) => {
@@ -35,8 +36,12 @@ const History = ({ refresh }) => {
               <tr key={row.id}>
                 <td>{row.from_currency}</td>
                 <td>{row.to_currency}</td>
-                <td>{row.amount}</td>
-                <td>{row.converted_amount}</td>
+                <td>
+                  {getSymbol(row.from_currency)} {row.amount}
+                </td>
+                <td>
+                  {getSymbol(row.to_currency)} {row.converted_amount}
+                </td>
                 <td>{row.rate}</td>
                 <td>{new Date(row.createdAt).toLocaleString()}</td>
               </tr>

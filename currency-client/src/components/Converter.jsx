@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from '../api/client';
+import { getSymbol } from '../utils/currencySymbols';
 import './Converter.css';
 
 const Converter = ({ onConvert }) => {
@@ -33,7 +34,7 @@ const Converter = ({ onConvert }) => {
           >
             {currencies.map((c) => (
               <option key={c} value={c}>
-                {c}
+                {getSymbol(c)} {c}
               </option>
             ))}
           </select>
@@ -41,13 +42,16 @@ const Converter = ({ onConvert }) => {
 
         <div className='input-group'>
           <label htmlFor='amount'>Amount</label>
-          <input
-            id='amount'
-            type='number'
-            min='0'
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-          />
+          <div className='amount-input-wrapper'>
+            <span className='currency-symbol'>{getSymbol(from)} </span>
+            <input
+              id='amount'
+              type='number'
+              min='0'
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+            />
+          </div>
         </div>
 
         <div className='input-group'>
@@ -55,7 +59,7 @@ const Converter = ({ onConvert }) => {
           <select id='to' value={to} onChange={(e) => setTo(e.target.value)}>
             {currencies.map((c) => (
               <option key={c} value={c}>
-                {c}
+                {getSymbol(c)} {c}
               </option>
             ))}
           </select>
