@@ -4,7 +4,7 @@ A simple single-page currency converter with history, built using React, Vite, N
 
 ## 🌐 Live Demo
 
-Try it here: [basic-currency-exchange-1.onrender.com](https://basic-currency-exchange-1.onrender.com/)
+Try it here: [https://basic-currency-exchange-client.onrender.com/](https://basic-currency-exchange-client.onrender.com/)
 
 ## 🚀 Features
 
